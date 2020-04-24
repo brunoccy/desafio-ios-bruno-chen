@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDDE5594245326CA002E8AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5593245326CA002E8AD2 /* AppDelegate.swift */; };
+		FDDE5596245326CA002E8AD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5595245326CA002E8AD2 /* SceneDelegate.swift */; };
+		FDDE5598245326CA002E8AD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5597245326CA002E8AD2 /* ViewController.swift */; };
+		FDDE559B245326CA002E8AD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDE5599245326CA002E8AD2 /* Main.storyboard */; };
+		FDDE559D245326CA002E8AD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDDE559C245326CA002E8AD2 /* Assets.xcassets */; };
+		FDDE55A0245326CA002E8AD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDE559E245326CA002E8AD2 /* LaunchScreen.storyboard */; };
+		FDDE55AB245326CB002E8AD2 /* desafio_ios_bruno_chenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE55AA245326CB002E8AD2 /* desafio_ios_bruno_chenTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDDE55A7245326CA002E8AD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDDE5588245326CA002E8AD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDDE558F245326CA002E8AD2;
+			remoteInfo = "desafio-ios-bruno-chen";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FDDE5590245326CA002E8AD2 /* desafio-ios-bruno-chen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios-bruno-chen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDDE5593245326CA002E8AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDDE5595245326CA002E8AD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FDDE5597245326CA002E8AD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDDE559A245326CA002E8AD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDDE559C245326CA002E8AD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDDE559F245326CA002E8AD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDDE55A1245326CA002E8AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDDE55A6245326CA002E8AD2 /* desafio-ios-bruno-chenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "desafio-ios-bruno-chenTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDDE55AA245326CB002E8AD2 /* desafio_ios_bruno_chenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_ios_bruno_chenTests.swift; sourceTree = "<group>"; };
+		FDDE55AC245326CB002E8AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDDE558D245326CA002E8AD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDDE55A3245326CA002E8AD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDDE5587245326CA002E8AD2 = {
+			isa = PBXGroup;
+			children = (
+				FDDE5592245326CA002E8AD2 /* desafio-ios-bruno-chen */,
+				FDDE55A9245326CA002E8AD2 /* desafio-ios-bruno-chenTests */,
+				FDDE5591245326CA002E8AD2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDDE5591245326CA002E8AD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDDE5590245326CA002E8AD2 /* desafio-ios-bruno-chen.app */,
+				FDDE55A6245326CA002E8AD2 /* desafio-ios-bruno-chenTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDDE5592245326CA002E8AD2 /* desafio-ios-bruno-chen */ = {
+			isa = PBXGroup;
+			children = (
+				FDDE5593245326CA002E8AD2 /* AppDelegate.swift */,
+				FDDE5595245326CA002E8AD2 /* SceneDelegate.swift */,
+				FDDE5597245326CA002E8AD2 /* ViewController.swift */,
+				FDDE5599245326CA002E8AD2 /* Main.storyboard */,
+				FDDE559C245326CA002E8AD2 /* Assets.xcassets */,
+				FDDE559E245326CA002E8AD2 /* LaunchScreen.storyboard */,
+				FDDE55A1245326CA002E8AD2 /* Info.plist */,
+			);
+			path = "desafio-ios-bruno-chen";
+			sourceTree = "<group>";
+		};
+		FDDE55A9245326CA002E8AD2 /* desafio-ios-bruno-chenTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDDE55AA245326CB002E8AD2 /* desafio_ios_bruno_chenTests.swift */,
+				FDDE55AC245326CB002E8AD2 /* Info.plist */,
+			);
+			path = "desafio-ios-bruno-chenTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDDE558F245326CA002E8AD2 /* desafio-ios-bruno-chen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDDE55AF245326CB002E8AD2 /* Build configuration list for PBXNativeTarget "desafio-ios-bruno-chen" */;
+			buildPhases = (
+				FDDE558C245326CA002E8AD2 /* Sources */,
+				FDDE558D245326CA002E8AD2 /* Frameworks */,
+				FDDE558E245326CA002E8AD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "desafio-ios-bruno-chen";
+			productName = "desafio-ios-bruno-chen";
+			productReference = FDDE5590245326CA002E8AD2 /* desafio-ios-bruno-chen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDDE55A5245326CA002E8AD2 /* desafio-ios-bruno-chenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDDE55B2245326CB002E8AD2 /* Build configuration list for PBXNativeTarget "desafio-ios-bruno-chenTests" */;
+			buildPhases = (
+				FDDE55A2245326CA002E8AD2 /* Sources */,
+				FDDE55A3245326CA002E8AD2 /* Frameworks */,
+				FDDE55A4245326CA002E8AD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDDE55A8245326CA002E8AD2 /* PBXTargetDependency */,
+			);
+			name = "desafio-ios-bruno-chenTests";
+			productName = "desafio-ios-bruno-chenTests";
+			productReference = FDDE55A6245326CA002E8AD2 /* desafio-ios-bruno-chenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDDE5588245326CA002E8AD2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Bruno Chen";
+				TargetAttributes = {
+					FDDE558F245326CA002E8AD2 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					FDDE55A5245326CA002E8AD2 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = FDDE558F245326CA002E8AD2;
+					};
+				};
+			};
+			buildConfigurationList = FDDE558B245326CA002E8AD2 /* Build configuration list for PBXProject "desafio-ios-bruno-chen" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDDE5587245326CA002E8AD2;
+			productRefGroup = FDDE5591245326CA002E8AD2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDDE558F245326CA002E8AD2 /* desafio-ios-bruno-chen */,
+				FDDE55A5245326CA002E8AD2 /* desafio-ios-bruno-chenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDDE558E245326CA002E8AD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDDE55A0245326CA002E8AD2 /* LaunchScreen.storyboard in Resources */,
+				FDDE559D245326CA002E8AD2 /* Assets.xcassets in Resources */,
+				FDDE559B245326CA002E8AD2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDDE55A4245326CA002E8AD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDDE558C245326CA002E8AD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDDE5598245326CA002E8AD2 /* ViewController.swift in Sources */,
+				FDDE5594245326CA002E8AD2 /* AppDelegate.swift in Sources */,
+				FDDE5596245326CA002E8AD2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDDE55A2245326CA002E8AD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDDE55AB245326CB002E8AD2 /* desafio_ios_bruno_chenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDDE55A8245326CA002E8AD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDDE558F245326CA002E8AD2 /* desafio-ios-bruno-chen */;
+			targetProxy = FDDE55A7245326CA002E8AD2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDDE5599245326CA002E8AD2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDDE559A245326CA002E8AD2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FDDE559E245326CA002E8AD2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDDE559F245326CA002E8AD2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDDE55AD245326CB002E8AD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDDE55AE245326CB002E8AD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDDE55B0245326CB002E8AD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CZLKGMVY8A;
+				INFOPLIST_FILE = "desafio-ios-bruno-chen/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunochen.desafio-ios-bruno-chen";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDDE55B1245326CB002E8AD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CZLKGMVY8A;
+				INFOPLIST_FILE = "desafio-ios-bruno-chen/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunochen.desafio-ios-bruno-chen";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FDDE55B3245326CB002E8AD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CZLKGMVY8A;
+				INFOPLIST_FILE = "desafio-ios-bruno-chenTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunochen.desafio-ios-bruno-chenTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafio-ios-bruno-chen.app/desafio-ios-bruno-chen";
+			};
+			name = Debug;
+		};
+		FDDE55B4245326CB002E8AD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CZLKGMVY8A;
+				INFOPLIST_FILE = "desafio-ios-bruno-chenTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunochen.desafio-ios-bruno-chenTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafio-ios-bruno-chen.app/desafio-ios-bruno-chen";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDDE558B245326CA002E8AD2 /* Build configuration list for PBXProject "desafio-ios-bruno-chen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDDE55AD245326CB002E8AD2 /* Debug */,
+				FDDE55AE245326CB002E8AD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDDE55AF245326CB002E8AD2 /* Build configuration list for PBXNativeTarget "desafio-ios-bruno-chen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDDE55B0245326CB002E8AD2 /* Debug */,
+				FDDE55B1245326CB002E8AD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDDE55B2245326CB002E8AD2 /* Build configuration list for PBXNativeTarget "desafio-ios-bruno-chenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDDE55B3245326CB002E8AD2 /* Debug */,
+				FDDE55B4245326CB002E8AD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDDE5588245326CA002E8AD2 /* Project object */;
+}
