@@ -19,6 +19,7 @@ class HerosTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         herosViewPresenter = HeroViewPresenter(heroesController: self)
         herosViewPresenter.loadHeroes(currentPage: currentPage, isLoading: isLoading)
     }
@@ -34,11 +35,15 @@ class HerosTableViewController: UITableViewController {
         return heroes.count
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "heroDetailSegue", sender: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! HerosTableViewCell
         let hero = heroes[indexPath.row]
         cell.loadCell(with: hero)
-        
         return cell
     }
     
@@ -53,7 +58,7 @@ class HerosTableViewController: UITableViewController {
         self.heroes += heros
         self.total = total
         isLoading = false
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 }
 

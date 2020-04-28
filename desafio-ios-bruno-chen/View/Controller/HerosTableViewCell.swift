@@ -1,8 +1,8 @@
 //
-//  HerosTableViewCell.swift
+//  Heros2TableViewCell.swift
 //  desafio-ios-bruno-chen
 //
-//  Created by Bruno Chen on 24/04/20.
+//  Created by Bruno Chen on 28/04/20.
 //  Copyright © 2020 Bruno Chen. All rights reserved.
 //
 
@@ -19,7 +19,6 @@ class HerosTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    
     }
         
     func loadCell(with hero: Hero) {
