@@ -28,25 +28,36 @@ class MarvelApi {
         let offset = page * limit
         let urlString = basicPath + "?offset=\(offset)&limit=\(limit)&"+apiCredentials()
         AF.request(urlString).responseJSON { (response) in
-            guard let data = response.data,
-                let marvelData = try? JSONDecoder().decode(HeroesData.self, from: data) else {
+            guard let data = response.data else {
                 completeHerosData(nil)
                 return
             }
-            completeHerosData(marvelData)
+            do {
+                let marvelData = try JSONDecoder().decode(HeroesData.self, from: data)
+                completeHerosData(marvelData)
+            } catch {
+                print(error.localizedDescription)
+                completeHerosData(nil)
+            }
         }
     }
     
     class func loadComics(heroId: Int, completeComicsData: @escaping (ComicData?) -> Void) {
         
         let urlString = basicPath + "/\(heroId)/comics?"+apiCredentials()
+        
         AF.request(urlString).responseJSON { (response) in
-            guard let data = response.data,
-                let marvelComicData = try? JSONDecoder().decode(ComicData.self, from: data) else {
+            guard let data = response.data else {
                 completeComicsData(nil)
                 return
             }
-            completeComicsData(marvelComicData)
+            do {
+                let marvelComicData = try JSONDecoder().decode(ComicData.self, from: data)
+                completeComicsData(marvelComicData)
+            } catch {
+                print(error.localizedDescription)
+                completeComicsData(nil)
+            }
         }
     }
 }
