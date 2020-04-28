@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HeroesData: Codable {
+struct HeroesData: Decodable {
     let code: Int
     let data: Data
 }

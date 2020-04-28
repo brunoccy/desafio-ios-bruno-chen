@@ -23,40 +23,46 @@ class MarvelApi {
         return apiCredential
     }
     
-    class func loadAllHeroes(page: Int, completeHerosData: @escaping (HeroesData?) -> Void) {
+    class func loadAllHeroes(page: Int, completeHerosData: @escaping (Any?) -> Void) {
         
         let offset = page * limit
         let urlString = basicPath + "?offset=\(offset)&limit=\(limit)&"+apiCredentials()
-        AF.request(urlString).responseJSON { (response) in
-            guard let data = response.data else {
-                completeHerosData(nil)
-                return
-            }
-            do {
-                let marvelData = try JSONDecoder().decode(HeroesData.self, from: data)
-                completeHerosData(marvelData)
-            } catch {
-                print(error.localizedDescription)
-                completeHerosData(nil)
-            }
-        }
+        
+        acessAPI(urlString: urlString, dataType: HeroesData.self, completeData: completeHerosData)
+        
     }
     
-    class func loadComics(heroId: Int, completeComicsData: @escaping (ComicData?) -> Void) {
+    class func loadComics(heroId: Int, completeComicsData: @escaping (Any?) -> Void) {
         
         let urlString = basicPath + "/\(heroId)/comics?"+apiCredentials()
         
+        acessAPI(urlString: urlString, dataType: ComicData.self, completeData: completeComicsData)
+        
+    }
+    
+    private class func acessAPI<T>(urlString: String, dataType: T.Type, completeData: @escaping (Any?) -> Void ) where T : Decodable{
+       
         AF.request(urlString).responseJSON { (response) in
             guard let data = response.data else {
-                completeComicsData(nil)
+                completeData(nil)
                 return
             }
             do {
-                let marvelComicData = try JSONDecoder().decode(ComicData.self, from: data)
-                completeComicsData(marvelComicData)
+                let decodedData = try JSONDecoder().decode(dataType, from: data)
+                completeData(decodedData)
+            } catch let DecodingError.dataCorrupted(context) {
+                print(context)
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.valueNotFound(value, context) {
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.typeMismatch(type, context)  {
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
             } catch {
-                print(error.localizedDescription)
-                completeComicsData(nil)
+                print("error: ", error)
             }
         }
     }

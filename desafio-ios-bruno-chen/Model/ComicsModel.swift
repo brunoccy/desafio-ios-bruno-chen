@@ -18,7 +18,7 @@ class ComicsModel {
     
     func loadComics(heroid: Int) {
          MarvelApi.loadComics(heroId: heroid) { (comicData) in
-            if let comicData = comicData {
+            if let comicData = comicData as? ComicData {
                 DispatchQueue.main.async {
                     self.mostExpensiveComic(arrayComics: comicData.data.results)
                 }

@@ -18,9 +18,9 @@ class HeroesModel {
     
     func loadHeroess(currentPage: Int, isLoading: Bool) {
         MarvelApi.loadAllHeroes(page: currentPage) { (heroesData) in
-            if let heroesData = heroesData {
-                let heroes = heroesData.data.results
-                let total = heroesData.data.total
+            if let heroesData = heroesData as? HeroesData {
+                let heroes = (heroesData).data.results
+                let total = (heroesData).data.total
                 DispatchQueue.main.async {
                     //self.isLoading = false
                     self.delegate?.loadHeroModel(heros: heroes, total: total)
