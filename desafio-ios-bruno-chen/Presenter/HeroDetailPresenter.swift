@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol HeroDetailDelegate {
+protocol HeroDetailDelegate: class {
     func loadHeroDetail(heroDetail: (name: String, description: String, url: String))
 }
 
 struct HeroDetailPresenter {
 
-    var delegate: HeroDetailDelegate?
+    weak var delegate: HeroDetailDelegate?
     
     func getHeroDetail(hero: Hero) {
         var heroDetail: (name: String, description: String, url: String)

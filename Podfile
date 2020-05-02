@@ -11,10 +11,11 @@ target 'desafio-ios-bruno-chen' do
    pod 'SwiftHash'
 
 
-
   target 'desafio-ios-bruno-chenTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
   end
 
 end

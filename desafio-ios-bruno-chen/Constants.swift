@@ -12,4 +12,6 @@ struct K {
     static let cellNibName = "HerosTableViewCell"
     static let cellIdentifier = "ReusableCell"
     static let heroDetailSegue = "heroDetailSegue"
+    static let heroData = "HeroData"
+    static let comicsData = "ComicsData"
 }

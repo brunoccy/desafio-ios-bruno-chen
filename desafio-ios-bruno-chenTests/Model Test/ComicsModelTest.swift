@@ -15,7 +15,7 @@ class MarvelApiTest: XCTestCase {
      
     var comicsMostExpensive: String!
 
-    func testMostExpensiveComics(){
+    func testGetMostExpensiveComics(){
         let thumbnail = ComicsImage(path: "jpg", ext: "www.marvel.com")
         let comics1 = Comics(title: "Hulk", thumbnail: thumbnail, description: "Green", prices: [Price(price: 2.00)])
         let comics2 = Comics(title: "Spider-Man", thumbnail: thumbnail, description: "Red", prices: [Price(price: 3.00)])
@@ -31,3 +31,5 @@ extension MarvelApiTest: ComicsModelDelegate {
         comicsMostExpensive = comics.title
     }
 }
+
+

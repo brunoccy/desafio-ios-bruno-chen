@@ -8,22 +8,27 @@
 
 import Foundation
 
-protocol ComicsModelDelegate {
+protocol ComicsModelDelegate: class {
     func loadComicsModel(comics: (title: String, price: Float, description: String?, url: String))
 }
 
 class ComicsModel {
     
-    var delegate: ComicsModelDelegate?
+    weak var delegate: ComicsModelDelegate?
+    
+    var marvelApi: DataProviderProtocol?
     
     func loadComics(heroid: Int) {
-         MarvelApi.loadComics(heroId: heroid) { (comicData) in
-            if let comicData = comicData as? ComicData {
+        
+        marvelApi = marvelApi ?? MarvelApi()
+        
+        marvelApi?.loadData(dataType: K.comicsData, int: heroid, completeData: { (comicData) in
+             if let comicData = comicData as? ComicData {
                 DispatchQueue.main.async {
                     self.mostExpensiveComic(arrayComics: comicData.data.results)
                 }
             }
-        }
+        })
     }
     
     func mostExpensiveComic(arrayComics: [Comics]) {

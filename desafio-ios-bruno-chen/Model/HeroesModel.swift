@@ -8,17 +8,22 @@
 
 import Foundation
 
-protocol HeroModelDelegate {
+protocol HeroModelDelegate: class {
     func loadHeroModel(heros: [Hero], total: Int)
 }
 
 class HeroesModel {
     
-    var delegate: HeroModelDelegate?
+    weak var delegate: HeroModelDelegate?
+    
+    var marvelApi: DataProviderProtocol?
     
     func loadHeroess(currentPage: Int, isLoading: Bool) {
-        MarvelApi.loadAllHeroes(page: currentPage) { (heroesData) in
-            if let heroesData = heroesData as? HeroesData {
+        
+        marvelApi = marvelApi ?? MarvelApi()
+        
+        marvelApi?.loadData(dataType: K.heroData, int: currentPage, completeData: { (heroesData) in
+                if let heroesData = heroesData as? HeroesData {
                 let heroes = (heroesData).data.results
                 let total = (heroesData).data.total
                 DispatchQueue.main.async {
@@ -26,7 +31,7 @@ class HeroesModel {
                     self.delegate?.loadHeroModel(heros: heroes, total: total)
                 }
             }
-        }
+        })
     }
 }
 

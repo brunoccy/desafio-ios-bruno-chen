@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C7AC1C0129A2BE3359E427E /* Pods_desafio_ios_bruno_chen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE4736D0701B328E63781C3 /* Pods_desafio_ios_bruno_chen.framework */; };
 		DB29700D59D53D34A6DA69C4 /* Pods_desafio_ios_bruno_chenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB32D3315B15FB915608B85 /* Pods_desafio_ios_bruno_chenTests.framework */; };
+		FD061A0D245B1A5B0062D70E /* exemplo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD061A0C245B1A5B0062D70E /* exemplo.swift */; };
 		FD1A629D24579AC10004C129 /* HeroDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A629C24579AC10004C129 /* HeroDetailPresenter.swift */; };
 		FD1A629F2457A1220004C129 /* HeroViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A629E2457A1220004C129 /* HeroViewPresenter.swift */; };
 		FD1A62A42457B4FD0004C129 /* ComicsModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A62A32457B4FD0004C129 /* ComicsModelTest.swift */; };
@@ -51,6 +52,7 @@
 		6B9B8B8FCD8CDC2FEC0AFF12 /* Pods-desafio-ios-bruno-chen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-bruno-chen.release.xcconfig"; path = "Target Support Files/Pods-desafio-ios-bruno-chen/Pods-desafio-ios-bruno-chen.release.xcconfig"; sourceTree = "<group>"; };
 		720DA827D3A6AF95B3E580D2 /* Pods-desafio-ios-bruno-chenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-bruno-chenTests.debug.xcconfig"; path = "Target Support Files/Pods-desafio-ios-bruno-chenTests/Pods-desafio-ios-bruno-chenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9370CC131877B01B51A073F3 /* Pods-desafio-ios-bruno-chen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-bruno-chen.debug.xcconfig"; path = "Target Support Files/Pods-desafio-ios-bruno-chen/Pods-desafio-ios-bruno-chen.debug.xcconfig"; sourceTree = "<group>"; };
+		FD061A0C245B1A5B0062D70E /* exemplo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exemplo.swift; sourceTree = "<group>"; };
 		FD1A629C24579AC10004C129 /* HeroDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailPresenter.swift; sourceTree = "<group>"; };
 		FD1A629E2457A1220004C129 /* HeroViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewPresenter.swift; sourceTree = "<group>"; };
 		FD1A62A32457B4FD0004C129 /* ComicsModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsModelTest.swift; sourceTree = "<group>"; };
@@ -132,12 +134,27 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		FD1A62AB2457CF4C0004C129 /* Model */ = {
+		FD1A62AB2457CF4C0004C129 /* Model Test */ = {
 			isa = PBXGroup;
 			children = (
+				FD1A62A32457B4FD0004C129 /* ComicsModelTest.swift */,
 				FD1A62A92457CF350004C129 /* heroesDataTest.swift */,
 			);
-			path = Model;
+			path = "Model Test";
+			sourceTree = "<group>";
+		};
+		FD40A5F0245CAAC200D6FD34 /* View Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Test";
+			sourceTree = "<group>";
+		};
+		FD40A5F1245CAAC500D6FD34 /* Presenter Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Presenter Test";
 			sourceTree = "<group>";
 		};
 		FDDE5587245326CA002E8AD2 = {
@@ -178,10 +195,12 @@
 		FDDE55A9245326CA002E8AD2 /* desafio-ios-bruno-chenTests */ = {
 			isa = PBXGroup;
 			children = (
-				FD1A62A32457B4FD0004C129 /* ComicsModelTest.swift */,
+				FD1A62AB2457CF4C0004C129 /* Model Test */,
+				FD40A5F0245CAAC200D6FD34 /* View Test */,
+				FD40A5F1245CAAC500D6FD34 /* Presenter Test */,
 				FDDE55AA245326CB002E8AD2 /* desafio_ios_bruno_chenTests.swift */,
 				FDDE55AC245326CB002E8AD2 /* Info.plist */,
-				FD1A62AB2457CF4C0004C129 /* Model */,
+				FD061A0C245B1A5B0062D70E /* exemplo.swift */,
 			);
 			path = "desafio-ios-bruno-chenTests";
 			sourceTree = "<group>";
@@ -250,6 +269,7 @@
 				FDDE55A2245326CA002E8AD2 /* Sources */,
 				FDDE55A3245326CA002E8AD2 /* Frameworks */,
 				FDDE55A4245326CA002E8AD2 /* Resources */,
+				C23CACA887FC47B4BEA4C283 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +380,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C23CACA887FC47B4BEA4C283 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-desafio-ios-bruno-chenTests/Pods-desafio-ios-bruno-chenTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-desafio-ios-bruno-chenTests/Pods-desafio-ios-bruno-chenTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-desafio-ios-bruno-chenTests/Pods-desafio-ios-bruno-chenTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D8573AD50B076BF8F868099C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,6 +450,7 @@
 			files = (
 				FDDE55AB245326CB002E8AD2 /* desafio_ios_bruno_chenTests.swift in Sources */,
 				FD1A62A42457B4FD0004C129 /* ComicsModelTest.swift in Sources */,
+				FD061A0D245B1A5B0062D70E /* exemplo.swift in Sources */,
 				FD1A62AA2457CF350004C129 /* heroesDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

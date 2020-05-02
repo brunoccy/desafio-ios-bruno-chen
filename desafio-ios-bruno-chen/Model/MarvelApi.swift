@@ -10,20 +10,36 @@ import Foundation
 import Alamofire
 import SwiftHash
 
-class MarvelApi {
-    static private let basicPath = "http://gateway.marvel.com/v1/public/characters"
-    static private let publicKey = "57ed2b3d64bde531d3b29a57d8501362"
-    static private let privateKey = "0d7a5599085634152b9ac4ddf2dbddaec242c233"
-    static private let limit = 20
+protocol DataProviderProtocol {
+    func loadData (dataType: String, int: Int, completeData: @escaping (Any?) -> Void)
+}
+
+class MarvelApi: DataProviderProtocol {
+    private let basicPath = "http://gateway.marvel.com/v1/public/characters"
+    private let publicKey = "57ed2b3d64bde531d3b29a57d8501362"
+    private let privateKey = "0d7a5599085634152b9ac4ddf2dbddaec242c233"
+    private let limit = 20
     
-    private class func apiCredentials() -> String {
+    
+    private func apiCredentials() -> String {
         let ts = String(Date().timeIntervalSince1970)
         let hashMD5 = MD5(ts+privateKey+publicKey).lowercased()
         let apiCredential: String = "ts=\(ts)&apikey=\(publicKey)&hash=\(hashMD5)"
         return apiCredential
     }
     
-    class func loadAllHeroes(page: Int, completeHerosData: @escaping (Any?) -> Void) {
+    func loadData (dataType: String, int: Int, completeData: @escaping (Any?) -> Void) {
+        switch dataType {
+            case K.heroData:
+                loadAllHeroes(page: int, completeHerosData: completeData)
+            case K.comicsData:
+                loadComics(heroId: int, completeComicsData: completeData)
+            default:
+                print("Load data error")
+            }
+    }
+    
+    private func loadAllHeroes(page: Int, completeHerosData: @escaping (Any?) -> Void) {
         
         let offset = page * limit
         let urlString = basicPath + "?offset=\(offset)&limit=\(limit)&"+apiCredentials()
@@ -32,7 +48,7 @@ class MarvelApi {
         
     }
     
-    class func loadComics(heroId: Int, completeComicsData: @escaping (Any?) -> Void) {
+    private func loadComics(heroId: Int, completeComicsData: @escaping (Any?) -> Void) {
         
         let urlString = basicPath + "/\(heroId)/comics?"+apiCredentials()
         
@@ -40,7 +56,7 @@ class MarvelApi {
         
     }
     
-    private class func acessAPI<T>(urlString: String, dataType: T.Type, completeData: @escaping (Any?) -> Void ) where T : Decodable{
+    private func acessAPI<T>(urlString: String, dataType: T.Type, completeData: @escaping (Any?) -> Void ) where T : Decodable{
        
         AF.request(urlString).responseJSON { (response) in
             guard let data = response.data else {

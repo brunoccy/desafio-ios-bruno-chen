@@ -18,12 +18,13 @@ class ComicsViewController: UIViewController {
     @IBOutlet weak var aiLoading: UIActivityIndicatorView!
     
     var hero: Hero!
+    var herosTableViewPresenter: ComicsPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         aiLoading.startAnimating()
         viewLoading.isHidden = false
-        let herosTableViewPresenter = ComicsPresenter(comicsView: self)
+        herosTableViewPresenter = ComicsPresenter(comicsView: self)
         herosTableViewPresenter.loadComic(heroid: hero.id)
     }
     
