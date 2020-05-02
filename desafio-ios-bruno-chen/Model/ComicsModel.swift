@@ -16,13 +16,13 @@ class ComicsModel {
     
     weak var delegate: ComicsModelDelegate?
     
-    var marvelApi: DataProviderProtocol?
+    var marvelDataProvider: DataProviderProtocol?
     
     func loadComics(heroid: Int) {
         
-        marvelApi = marvelApi ?? MarvelApi()
+        marvelDataProvider = marvelDataProvider ?? MarvelDataProvider()
         
-        marvelApi?.loadData(dataType: K.comicsData, int: heroid, completeData: { (comicData) in
+        marvelDataProvider?.loadData(dataType: K.comicsData, int: heroid, completeData: { (comicData) in
              if let comicData = comicData as? ComicData {
                 DispatchQueue.main.async {
                     self.mostExpensiveComic(arrayComics: comicData.data.results)

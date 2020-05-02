@@ -14,7 +14,7 @@ protocol DataProviderProtocol {
     func loadData (dataType: String, int: Int, completeData: @escaping (Any?) -> Void)
 }
 
-class MarvelApi: DataProviderProtocol {
+class MarvelDataProvider: DataProviderProtocol {
     private let basicPath = "http://gateway.marvel.com/v1/public/characters"
     private let publicKey = "57ed2b3d64bde531d3b29a57d8501362"
     private let privateKey = "0d7a5599085634152b9ac4ddf2dbddaec242c233"

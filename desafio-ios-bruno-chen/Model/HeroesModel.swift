@@ -16,13 +16,13 @@ class HeroesModel {
     
     weak var delegate: HeroModelDelegate?
     
-    var marvelApi: DataProviderProtocol?
+    var marvelDataProvider: DataProviderProtocol?
     
     func loadHeroess(currentPage: Int, isLoading: Bool) {
         
-        marvelApi = marvelApi ?? MarvelApi()
+        marvelDataProvider = marvelDataProvider ?? MarvelDataProvider()
         
-        marvelApi?.loadData(dataType: K.heroData, int: currentPage, completeData: { (heroesData) in
+        marvelDataProvider?.loadData(dataType: K.heroData, int: currentPage, completeData: { (heroesData) in
                 if let heroesData = heroesData as? HeroesData {
                 let heroes = (heroesData).data.results
                 let total = (heroesData).data.total

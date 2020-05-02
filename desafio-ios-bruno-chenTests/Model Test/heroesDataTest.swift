@@ -9,8 +9,27 @@
 import XCTest
 @testable import desafio_ios_bruno_chen
 
-class heroesDataTest: XCTestCase {
+//Normal test, without Quick pod
 
+class HeroesDataTest: XCTestCase {
+
+    var comicsModel: ComicsModel!
+    
+    override func setUp() {
+        comicsModel = ComicsModel()
+    }
+    
+    func testFetchHeroData() {
+        let mockProvider = MarvelDataProviderMock()
+        comicsModel.marvelDataProvider = mockProvider
+        
+        comicsModel.marvelDataProvider = mockProvider
+        XCTAssertFalse(mockProvider.fetchCalled)
+        let _ = comicsModel.loadComics(heroid: 5)
+        XCTAssertTrue(mockProvider.fetchCalled)
+        
+    }
+    
     func testInit() {
         let id = 10
         let name = "Hulk"

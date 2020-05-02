@@ -8,28 +8,44 @@
 
 import XCTest
 @testable import desafio_ios_bruno_chen
+import Nimble
+import Quick
 
-class MarvelApiTest: XCTestCase {
+class MarvelApiTest: QuickSpec, ComicsModelDelegate {
 
-    var comicsModel = ComicsModel()
-     
+    var comicsModel: ComicsModel!
     var comicsMostExpensive: String!
-
-    func testGetMostExpensiveComics(){
-        let thumbnail = ComicsImage(path: "jpg", ext: "www.marvel.com")
-        let comics1 = Comics(title: "Hulk", thumbnail: thumbnail, description: "Green", prices: [Price(price: 2.00)])
-        let comics2 = Comics(title: "Spider-Man", thumbnail: thumbnail, description: "Red", prices: [Price(price: 3.00)])
-        let comics3 = Comics(title: "Thor", thumbnail: thumbnail, description: "Yellow", prices: [Price(price: 1.00)])
-        comicsModel.delegate = self
-        comicsModel.mostExpensiveComic(arrayComics: [comics1,comics2,comics3])
-        XCTAssertTrue(comicsMostExpensive == "Spider-Man" )
+     
+// Com Quick
+    override func spec() {
+        describe("loadComics test") {
+            
+            beforeEach {
+                self.comicsModel = ComicsModel()
+            }
+            
+            it("fetch comics data with data provider") {
+                let mockProvider = MarvelDataProviderMock()
+                self.comicsModel.marvelDataProvider = mockProvider
+                expect(mockProvider.fetchCalled) == false
+                let _ = self.comicsModel.loadComics(heroid: 5)
+                expect(mockProvider.fetchCalled) == true
+            }
+            
+            it("Get most expensive comics") {
+                let thumbnail = ComicsImage(path: "jpg", ext: "www.marvel.com")
+                let comics1 = Comics(title: "Hulk", thumbnail: thumbnail, description: "Green", prices: [Price(price: 2.00)])
+                let comics2 = Comics(title: "Spider-Man", thumbnail: thumbnail, description: "Red", prices: [Price(price: 3.00)])
+                let comics3 = Comics(title: "Thor", thumbnail: thumbnail, description: "Yellow", prices: [Price(price: 1.00)])
+                self.comicsModel.delegate = self
+                self.comicsModel.mostExpensiveComic(arrayComics: [comics1,comics2,comics3])
+                expect(self.comicsMostExpensive) == "Spider-Man"
+            }
+            
+        }
     }
-}
-
-extension MarvelApiTest: ComicsModelDelegate {
+    
     func loadComicsModel(comics: (title: String, price: Float, description: String?, url: String)) {
         comicsMostExpensive = comics.title
     }
 }
-
-
