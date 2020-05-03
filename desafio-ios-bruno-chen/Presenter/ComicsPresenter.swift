@@ -17,8 +17,6 @@ class ComicsPresenter {
         self.comicsView = comicsView
     }
     
-    var heroId: Int = 0
-    
     func loadComic(heroid: Int) {
         comicsModel.delegate = self
         comicsModel.loadComics(heroid: heroid)

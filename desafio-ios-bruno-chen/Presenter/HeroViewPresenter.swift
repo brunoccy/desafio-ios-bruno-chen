@@ -8,18 +8,27 @@
 
 import Foundation
 
-class HeroViewPresenter {
+protocol HeroViewPresenterProtocol {
+    func loadHeroes(currentPage: Int, isLoading: Bool)
+    func onViewLoaded(heroesController: HerosTableViewController)
+}
+
+class HeroViewPresenter: HeroViewPresenterProtocol {
     
     var heroesModel: HeroesModel = HeroesModel()
-    var heroesController: HerosTableViewController
+    var heroesController: HerosTableViewController!
     
-    required init(heroesController: HerosTableViewController){
+//    required init(heroesController: HerosTableViewController){
+//        self.heroesController = heroesController
+//    }
+    
+    func onViewLoaded(heroesController: HerosTableViewController) {
         self.heroesController = heroesController
     }
     
     func loadHeroes(currentPage: Int, isLoading: Bool) {
         heroesModel.delegate = self
-        heroesModel.loadHeroess(currentPage: currentPage, isLoading: isLoading)
+        heroesModel.loadHeroes(currentPage: currentPage, isLoading: isLoading)
     }
 }
 

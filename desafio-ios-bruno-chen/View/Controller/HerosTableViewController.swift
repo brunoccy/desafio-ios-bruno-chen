@@ -15,12 +15,14 @@ class HerosTableViewController: UITableViewController {
     var isLoading: Bool = false
     var total = 0
     
-    var herosViewPresenter: HeroViewPresenter!
+    var herosViewPresenter: HeroViewPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
-        herosViewPresenter = HeroViewPresenter(heroesController: self)
+        herosViewPresenter = herosViewPresenter ?? HeroViewPresenter()
+        herosViewPresenter.onViewLoaded(heroesController: self)
+//      herosViewPresenter = HeroViewPresenter(heroesController: self)
         herosViewPresenter.loadHeroes(currentPage: currentPage, isLoading: isLoading)
     }
     

@@ -20,7 +20,6 @@ class MarvelDataProvider: DataProviderProtocol {
     private let privateKey = "0d7a5599085634152b9ac4ddf2dbddaec242c233"
     private let limit = 20
     
-    
     private func apiCredentials() -> String {
         let ts = String(Date().timeIntervalSince1970)
         let hashMD5 = MD5(ts+privateKey+publicKey).lowercased()

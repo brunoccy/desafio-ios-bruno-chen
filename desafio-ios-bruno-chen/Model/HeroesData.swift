@@ -21,7 +21,11 @@ struct Data: Codable {
     let results: [Hero]
 }
 
-struct Hero: Codable {
+struct Hero: Codable, Equatable {
+//    static func == (lhs: Hero, rhs: Hero) -> Bool {
+//        return (lhs.0 == rhs.0 && lhs.1 == rhs.1 && lhs.2 == rhs.2 && lhs.3 == rhs.3 && lhs.4 == rhs.4)
+//    }
+    
     let id: Int
     let name: String
     let description: String

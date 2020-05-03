@@ -18,7 +18,7 @@ class HeroesModel {
     
     var marvelDataProvider: DataProviderProtocol?
     
-    func loadHeroess(currentPage: Int, isLoading: Bool) {
+    func loadHeroes(currentPage: Int, isLoading: Bool) {
         
         marvelDataProvider = marvelDataProvider ?? MarvelDataProvider()
         
