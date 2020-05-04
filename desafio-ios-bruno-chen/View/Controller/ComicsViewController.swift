@@ -18,18 +18,19 @@ class ComicsViewController: UIViewController {
     @IBOutlet weak var aiLoading: UIActivityIndicatorView!
     
     var hero: Hero!
-    var herosTableViewPresenter: ComicsPresenter!
+    var comicsPresenter: ComicsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         aiLoading.startAnimating()
         viewLoading.isHidden = false
-        herosTableViewPresenter = ComicsPresenter(comicsView: self)
-        herosTableViewPresenter.loadComic(heroid: hero.id)
+        comicsPresenter = comicsPresenter ?? ComicsPresenter()
+        comicsPresenter.onViewLoaded(comicsView: self)
+        comicsPresenter.loadComic(heroid: hero.id)
     }
     
     func loadExpensiveComic(comics: (title: String, price: Float, description: String?, url: String)) {
-        DispatchQueue.main.async {
+
             self.labelComicsName.text = comics.title
             self.labelPrice.text = "US$: \(String(comics.price))"
             self.textFieldDescription.text = comics.description
@@ -41,7 +42,7 @@ class ComicsViewController: UIViewController {
             }
             self.viewLoading.isHidden = true
             self.aiLoading.stopAnimating()
-        }
+
     }
 
 }

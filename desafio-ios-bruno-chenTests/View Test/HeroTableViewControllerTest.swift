@@ -30,11 +30,16 @@ class HeroTableViewControllerTest: XCTestCase {
         expect(self.presenter.onViewLoadCalled) == true
     }
     
-    func testFillHeroesView() {
-//        let heroTest = [Hero(id: 10, name: "Spider-Man", description: "Red", thumbnail: Image(path: "spider-man-path", ext: "jpg"), urls: [HeroDetails(type: "heroModel", url: "www.marvel.com")])]
-//        herosTableViewController.loadHeroView(heros: heroTest, total: 5)
-//        expect(self.herosTableViewController.total) == 5
-//        expect(self.herosTableViewController.heroes.first).to(equal(heroTest.first))
-        
+    func testCallLoadHeroesPresenter() {
+        expect(self.presenter.currentPage) == 0
+        expect(self.presenter.isLoading) == false
     }
+    
+    func testFillHeroesArray() {
+        let heroTest = [Hero(id: 10, name: "Spider-Man", description: "Red", thumbnail: Image(path: "spider-man-path", ext: "jpg"), urls: [HeroDetails(type: "heroModel", url: "www.marvel.com")])]
+        herosTableViewController.loadHeroView(heros: heroTest, total: 5)
+        expect(self.herosTableViewController.heroes.first!.id) == heroTest.first!.id
+        expect(self.herosTableViewController.heroes.first!.description) == heroTest.first!.description
+    }
+    
 }

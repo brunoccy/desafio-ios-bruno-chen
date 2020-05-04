@@ -8,12 +8,17 @@
 
 import Foundation
 
-class ComicsPresenter {
+protocol ComicsPresenterProtocol {
+    func onViewLoaded(comicsView: ComicsViewController)
+    func loadComic(heroid: Int)
+}
+
+class ComicsPresenter: ComicsPresenterProtocol {
     
     var comicsModel: ComicsModel = ComicsModel()
-    var comicsView : ComicsViewController
+    var comicsView : ComicsViewController!
     
-    required init(comicsView : ComicsViewController) {
+    func onViewLoaded(comicsView: ComicsViewController) {
         self.comicsView = comicsView
     }
     

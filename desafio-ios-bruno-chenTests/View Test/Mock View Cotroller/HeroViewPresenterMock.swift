@@ -13,19 +13,16 @@ class HeroViewPresenterMock: HeroViewPresenterProtocol {
     
     private(set) var onViewLoadCalled = false
     
+    var currentPage = 10
+    
+    var isLoading = true
+    
     func onViewLoaded(heroesController: HerosTableViewController) {
         onViewLoadCalled = true
     }
     
-    private(set) var onEditCalled = false
-    
-    func onEdit() {
-        onEditCalled = true
-        
-    }
-    
     func loadHeroes(currentPage: Int, isLoading: Bool) {
-        
+        self.currentPage = currentPage
+        self.isLoading = isLoading
     }
-    
 }

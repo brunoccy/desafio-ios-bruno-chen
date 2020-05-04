@@ -22,7 +22,6 @@ class HerosTableViewController: UITableViewController {
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         herosViewPresenter = herosViewPresenter ?? HeroViewPresenter()
         herosViewPresenter.onViewLoaded(heroesController: self)
-//      herosViewPresenter = HeroViewPresenter(heroesController: self)
         herosViewPresenter.loadHeroes(currentPage: currentPage, isLoading: isLoading)
     }
     
