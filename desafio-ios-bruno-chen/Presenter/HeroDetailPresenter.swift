@@ -8,13 +8,18 @@
 
 import Foundation
 
-protocol HeroDetailDelegate: class {
-    func loadHeroDetail(heroDetail: (name: String, description: String, url: String))
+protocol HeroDetailPresenterProtocol {
+    func onViewLoaded(heroDetailView: HeroDetailViewController)
+    func getHeroDetail(hero: Hero)
 }
 
-struct HeroDetailPresenter {
+class HeroDetailPresenter: HeroDetailPresenterProtocol {
 
-    weak var delegate: HeroDetailDelegate?
+    var heroDetailView: HeroDetailViewControllerProtocol!
+    
+    func onViewLoaded(heroDetailView: HeroDetailViewController) {
+        self.heroDetailView = heroDetailView
+    }
     
     func getHeroDetail(hero: Hero) {
         var heroDetail: (name: String, description: String, url: String)
@@ -25,6 +30,6 @@ struct HeroDetailPresenter {
             heroDetail.description = "Doesn't have description"
         }
         heroDetail.url = hero.thumbnail.url
-        delegate?.loadHeroDetail(heroDetail: heroDetail)
+        heroDetailView.loadHeroDetail(heroDetail: heroDetail)
     }
 }

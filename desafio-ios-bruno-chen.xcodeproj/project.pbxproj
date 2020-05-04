@@ -16,6 +16,9 @@
 		FD1A62A82457B7740004C129 /* HeroesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A62A72457B7740004C129 /* HeroesModel.swift */; };
 		FD1A62AA2457CF350004C129 /* HeroesDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A62A92457CF350004C129 /* HeroesDataTest.swift */; };
 		FD37B11E245EFF8900AEFD4E /* HeroViewPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37B11D245EFF8900AEFD4E /* HeroViewPresenterMock.swift */; };
+		FD3E3671246076330096FB53 /* HeroDetailViewPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E3670246076330096FB53 /* HeroDetailViewPresenterMock.swift */; };
+		FD3E3673246088210096FB53 /* HerosDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E3672246088210096FB53 /* HerosDetailViewControllerTest.swift */; };
+		FD3E367624608FB20096FB53 /* HeroDetailControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E367524608FB20096FB53 /* HeroDetailControllerMock.swift */; };
 		FD3F87302455E34900B14655 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3F872F2455E34900B14655 /* WebKit.framework */; };
 		FD3F873224561F1D00B14655 /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3F873124561F1D00B14655 /* ComicsViewController.swift */; };
 		FD3F8734245621DF00B14655 /* ComicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3F8733245621DF00B14655 /* ComicData.swift */; };
@@ -64,6 +67,9 @@
 		FD1A62A72457B7740004C129 /* HeroesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesModel.swift; sourceTree = "<group>"; };
 		FD1A62A92457CF350004C129 /* HeroesDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDataTest.swift; sourceTree = "<group>"; };
 		FD37B11D245EFF8900AEFD4E /* HeroViewPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewPresenterMock.swift; sourceTree = "<group>"; };
+		FD3E3670246076330096FB53 /* HeroDetailViewPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewPresenterMock.swift; sourceTree = "<group>"; };
+		FD3E3672246088210096FB53 /* HerosDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosDetailViewControllerTest.swift; sourceTree = "<group>"; };
+		FD3E367524608FB20096FB53 /* HeroDetailControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailControllerMock.swift; sourceTree = "<group>"; };
 		FD3F872F2455E34900B14655 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FD3F873124561F1D00B14655 /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
 		FD3F8733245621DF00B14655 /* ComicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicData.swift; sourceTree = "<group>"; };
@@ -158,9 +164,18 @@
 			isa = PBXGroup;
 			children = (
 				FD37B11D245EFF8900AEFD4E /* HeroViewPresenterMock.swift */,
+				FD3E3670246076330096FB53 /* HeroDetailViewPresenterMock.swift */,
 				FD86D0CB2460649A00CEB1A9 /* ComicsViewPresenterMock.swift */,
 			);
 			path = "Mock View Cotroller";
+			sourceTree = "<group>";
+		};
+		FD3E367424608F710096FB53 /* Mock Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FD3E367524608FB20096FB53 /* HeroDetailControllerMock.swift */,
+			);
+			path = "Mock Presenter";
 			sourceTree = "<group>";
 		};
 		FD40A5F0245CAAC200D6FD34 /* View Test */ = {
@@ -169,6 +184,7 @@
 				FD37B11C245EFF2B00AEFD4E /* Mock View Cotroller */,
 				FD7BD6F5245E12A300112085 /* HeroTableViewControllerTest.swift */,
 				FD58BD0E245F29C600DD011F /* HerosTableViewCellTest.swift */,
+				FD3E3672246088210096FB53 /* HerosDetailViewControllerTest.swift */,
 				FDB9CD51245F4B9F007CD144 /* ComicsViewControllerTest.swift */,
 			);
 			path = "View Test";
@@ -177,6 +193,7 @@
 		FD40A5F1245CAAC500D6FD34 /* Presenter Test */ = {
 			isa = PBXGroup;
 			children = (
+				FD3E367424608F710096FB53 /* Mock Presenter */,
 				FD9B297D245DE39D00E14DE1 /* HeroDetailPresenterTest.swift */,
 			);
 			path = "Presenter Test";
@@ -481,13 +498,16 @@
 			files = (
 				FD86D0CC2460649A00CEB1A9 /* ComicsViewPresenterMock.swift in Sources */,
 				FD37B11E245EFF8900AEFD4E /* HeroViewPresenterMock.swift in Sources */,
+				FD3E3671246076330096FB53 /* HeroDetailViewPresenterMock.swift in Sources */,
 				FD9B2978245DC0F200E14DE1 /* MarvelDataProviderMock.swift in Sources */,
 				FD7BD6F6245E12A300112085 /* HeroTableViewControllerTest.swift in Sources */,
 				FD9B297E245DE39D00E14DE1 /* HeroDetailPresenterTest.swift in Sources */,
 				FD1A62A42457B4FD0004C129 /* ComicsModelTest.swift in Sources */,
 				FD1A62AA2457CF350004C129 /* HeroesDataTest.swift in Sources */,
+				FD3E367624608FB20096FB53 /* HeroDetailControllerMock.swift in Sources */,
 				FDB9CD52245F4B9F007CD144 /* ComicsViewControllerTest.swift in Sources */,
 				FD58BD0F245F29C600DD011F /* HerosTableViewCellTest.swift in Sources */,
+				FD3E3673246088210096FB53 /* HerosDetailViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

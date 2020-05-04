@@ -10,19 +10,24 @@ import UIKit
 import WebKit
 import Kingfisher
 
-class HeroDetailViewController: UIViewController {
+protocol HeroDetailViewControllerProtocol {
+     func loadHeroDetail(heroDetail: (name: String, description: String, url: String))
+}
+
+class HeroDetailViewController: UIViewController, HeroDetailViewControllerProtocol {
 
     @IBOutlet weak var imageViewHero: UIImageView!
     @IBOutlet weak var labelHeroName: UILabel!
     @IBOutlet weak var textViewDescription: UITextView!
     
     var hero: Hero!
-    var heroDetailPresenter = HeroDetailPresenter()
+    var heroDetailPresenter: HeroDetailPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        heroDetailPresenter.delegate = self
+        heroDetailPresenter = heroDetailPresenter ?? HeroDetailPresenter()
+        heroDetailPresenter.onViewLoaded(heroDetailView: self)
         heroDetailPresenter.getHeroDetail(hero: hero)
     }
     
@@ -30,12 +35,7 @@ class HeroDetailViewController: UIViewController {
         let target = segue.destination as! ComicsViewController
         target.hero = hero
     }
-
-}
-
-//MARK: - HeroDetailDelegate
-
-extension HeroDetailViewController: HeroDetailDelegate {
+    
     func loadHeroDetail(heroDetail: (name: String, description: String, url: String)) {
       labelHeroName.text = heroDetail.name
         textViewDescription.text = heroDetail.description
@@ -46,4 +46,5 @@ extension HeroDetailViewController: HeroDetailDelegate {
           imageViewHero.image = nil
       }
     }
+
 }

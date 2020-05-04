@@ -33,7 +33,7 @@
         <!--Hero Detail View Controller-->
         <scene sceneID="7rP-ij-Yz4">
             <objects>
-                <viewController id="dG9-qe-QKy" customClass="HeroDetailViewController" customModule="desafio_ios_bruno_chen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroDetailController" id="dG9-qe-QKy" customClass="HeroDetailViewController" customModule="desafio_ios_bruno_chen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nYv-Lj-QC7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

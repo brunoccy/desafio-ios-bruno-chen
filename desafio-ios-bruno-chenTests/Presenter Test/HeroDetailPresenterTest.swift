@@ -14,30 +14,26 @@ class HeroDetailPresenterTest: XCTestCase {
     
     var heroDetailPresenter: HeroDetailPresenter!
     
+    var heroDetailControllerMock: HeroDetailControllerMock!
+    
     var heroDetailTest: (name: String, description: String, url: String)!
     
     override func setUp() {
         heroDetailPresenter = HeroDetailPresenter()
-        heroDetailPresenter.delegate = self
+        heroDetailControllerMock = HeroDetailControllerMock()
+        heroDetailPresenter.heroDetailView = heroDetailControllerMock
     }
     
     func testGetHeroDetailWithDescription() {
         
         let hero: Hero = Hero(id: 5, name: "Name", description: "Description", thumbnail: Image(path: "path", ext: "ext"), urls: [HeroDetails(type: "type", url: "Url")])
         heroDetailPresenter.getHeroDetail(hero: hero)
-        XCTAssertEqual(heroDetailTest.description, hero.description)
+        XCTAssertEqual(heroDetailControllerMock.heroDetail.description, hero.description)
     }
     
     func testGetHeroDetailWithoutDescription() {
         let hero: Hero = Hero(id: 5, name: "Name", description: "", thumbnail: Image(path: "path", ext: "ext"), urls: [HeroDetails(type: "type", url: "Url")])
         heroDetailPresenter.getHeroDetail(hero: hero)
-        XCTAssertEqual(heroDetailTest.description, "Doesn't have description")
-    }
-    
-}
-
-extension HeroDetailPresenterTest: HeroDetailDelegate {
-    func loadHeroDetail(heroDetail: (name: String, description: String, url: String)) {
-        self.heroDetailTest = (name: heroDetail.name, description: heroDetail.description, url:heroDetail.url)
+        XCTAssertEqual(heroDetailControllerMock.heroDetail.description, "Doesn't have description")
     }
 }
